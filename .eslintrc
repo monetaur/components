@@ -1,0 +1,36 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb/hooks"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.js",
+          "**/*.stories.jsx",
+          "**/*.test.js",
+          "**/*.test.jsx",
+          "*.config.js"
+        ]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [ "error", {
+      "required": {
+        "some": [
+          "nesting",
+          "id"
+        ]
+      }
+    }],
+    "react/jsx-fragments": [1, "element"]
+  }
+}
