@@ -58,7 +58,24 @@ Column.defaultProps = {
 const Grid = styled.div`
   display: flex;
   flex-wrap: wrap;
+
+  ${({ padded }) => padded && css`
+    margin-left: -1em;
+    margin-right: -1em;
+
+    > ${Column} {
+      padding: 1em;
+    }
+  `}
 `;
+
+Grid.propTypes = {
+  padded: PropTypes.bool,
+};
+
+Grid.defaultProps = {
+  padded: false,
+};
 
 Grid.Column = Column;
 

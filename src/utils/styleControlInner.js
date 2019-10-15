@@ -59,6 +59,10 @@ const styleControlInner = ({
   :hover {
     border-color: ${darken(0.2, theme.forms.borderColor)};
   }
+
+  ::placeholder {
+    color: ${theme.palette.placeholderColor};
+  }
 `;
 
 export default styleControlInner;

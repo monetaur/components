@@ -39,7 +39,7 @@ const Input = withTheme(styled.input`
   }
 
   :checked + label:before {
-    background-color: ${({ theme }) => theme.palette.secondaryColor};
+    background-color: ${({ theme }) => theme.palette.secondary};
   }
 `);
 
@@ -62,7 +62,7 @@ function Checkbox({
 
 Checkbox.propTypes = {
   children: PropTypes.node,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   name: PropTypes.string,
   required: PropTypes.bool,
   value: PropTypes.oneOfType([
@@ -73,6 +73,7 @@ Checkbox.propTypes = {
 
 Checkbox.defaultProps = {
   children: undefined,
+  id: undefined,
   name: undefined,
   required: undefined,
   value: undefined,

@@ -7,14 +7,14 @@ const defaultTheme = {
   },
   forms: {
     borderColor: '#ced4da',
-    paddingVertical: '0.5em',
-    paddingHorizontal: '1em',
+    paddingVertical: '0.4em',
+    paddingHorizontal: '0.8em',
   },
   gridColumns: 12,
   lineHeight: 1.5,
   palette: {
-    primaryColor: '#21C5B4',
-    secondaryColor: '#7B94B1',
+    primary: '#21C5B4',
+    secondary: '#7B94B1',
     textColor: 'rgba(0, 0, 0, 0.87)',
     mutedTextColor: '#666',
     placeholderColor: '#aaa',
@@ -28,11 +28,17 @@ const defaultTheme = {
     yellow: 'yellow',
     transparent: 'transparent',
   },
+  textSizes: {
+    xs: '0.6em',
+    sm: '0.8em',
+    lg: '1.6em',
+    xl: '2.4em',
+  },
   sizes: {
     xs: '0.6em',
     sm: '0.8em',
-    lg: '1.2em',
-    xl: '1.4em',
+    lg: '1.4em',
+    xl: '1.8em',
   },
   shadows: {
     focus: '0 0 0 3px rgba(0, 123, 255, 0.25)',

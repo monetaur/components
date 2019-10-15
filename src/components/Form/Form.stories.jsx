@@ -9,6 +9,7 @@ import Dropdown from '../Dropdown';
 import Select from '../Select';
 import Checkbox from '../Checkbox';
 import Radio from '../Radio';
+import TextArea from '../TextArea';
 
 const preventDefault = decorate([
   (args) => {
@@ -56,15 +57,19 @@ export const withFields = () => (
 export const withFieldsAndLabels = () => (
   <Form onSubmit={preventDefault.action('Form Submitted')}>
     <Form.Field block={boolean('Field Block', true)}>
-      <Label htmlFor="text">Text Field Label</Label>
+      <Label htmlFor="text">Input Label</Label>
       <Input id="text" placeholder="Text Field" />
     </Form.Field>
     <Form.Field block={boolean('Field Block', true)}>
-      <Label htmlFor="age">Text Field Label</Label>
+      <Label htmlFor="textarea">TextArea Label</Label>
+      <TextArea id="textarea" placeholder="TextArea" />
+    </Form.Field>
+    <Form.Field block={boolean('Field Block', true)}>
+      <Label htmlFor="age">Dropdown Label</Label>
       <Dropdown id="age" options={['10-19', '20-29', '30-39', '40-49']} placeholder="Age" />
     </Form.Field>
     <Form.Field block={boolean('Field Block', true)}>
-      <Label htmlFor="gender">Text Field Label</Label>
+      <Label htmlFor="gender">Select Label</Label>
       <Select id="gender" required>
         <option disabled hidden selected value="">Gender</option>
         <option value="male">Male</option>

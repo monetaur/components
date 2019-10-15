@@ -46,7 +46,7 @@ const Input = withTheme(styled.input`
   }
 
   :checked + label:before {
-    background-color: ${({ theme }) => theme.palette.secondaryColor};
+    background-color: ${({ theme }) => theme.palette.secondary};
   }
 `);
 
@@ -71,7 +71,7 @@ function Radio({
 Radio.propTypes = {
   block: PropTypes.bool,
   children: PropTypes.node,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([
     PropTypes.number,
@@ -83,6 +83,7 @@ Radio.propTypes = {
 Radio.defaultProps = {
   block: false,
   children: undefined,
+  id: undefined,
   value: undefined,
   required: false,
 };

@@ -9,19 +9,12 @@ import { withTheme } from '../ThemeProvider';
 const Input = withTheme(styled.input`
   ${(props) => styleControlInner(props)}
   ${(props) => styleControlOuter(props)}
-
-  ::placeholder {
-    color: ${({ theme }) => theme.palette.placeholderColor};
-  }
 `);
 
 Input.propTypes = {
   block: PropTypes.bool,
   color: ColorPropType,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
   raised: PropTypes.bool,
-  required: PropTypes.bool,
   size: SizePropType,
   type: PropTypes.string,
 };
@@ -29,10 +22,7 @@ Input.propTypes = {
 Input.defaultProps = {
   block: false,
   color: undefined,
-  name: undefined,
-  placeholder: undefined,
   raised: false,
-  required: undefined,
   size: undefined,
   type: 'text',
 };

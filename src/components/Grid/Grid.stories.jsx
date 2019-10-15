@@ -1,5 +1,5 @@
 import React from 'react';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import Grid from './Grid';
 import Box from '../Box';
 
@@ -8,7 +8,7 @@ export default {
 };
 
 export const withDefaults = () => (
-  <Grid>
+  <Grid padded={boolean('Padded', false)}>
     <Grid.Column><Box block>{text('Content', 'Column')}</Box></Grid.Column>
     <Grid.Column><Box block>{text('Content', 'Column')}</Box></Grid.Column>
     <Grid.Column><Box block>{text('Content', 'Column')}</Box></Grid.Column>
@@ -16,7 +16,7 @@ export const withDefaults = () => (
 );
 
 export const withResponsiveWidths = () => (
-  <Grid columns={16}>
+  <Grid columns={16} padded={boolean('Padded', false)}>
     <Grid.Column sm="4" lg="3" xl="2"><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
     <Grid.Column sm="4" lg="3" xl="2"><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
     <Grid.Column sm="4" lg="3" xl="2"><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>

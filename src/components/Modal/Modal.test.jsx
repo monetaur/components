@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Radio from './Radio';
+import Modal from './Modal';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Radio name="test" />, div);
+  ReactDOM.render(<Modal>test content</Modal>, div);
   ReactDOM.unmountComponentAtNode(div);
 });

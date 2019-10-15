@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 
 export const Colors = {
-  Red: 'red',
-  Green: 'green',
   Blue: 'blue',
-  Purple: 'purple',
+  Gray: 'gray',
+  Green: 'green',
   Pink: 'pink',
-  Yellow: 'yellow',
+  Primary: 'primary',
+  Purple: 'purple',
+  Red: 'red',
+  Secondary: 'secondary',
   Transparent: 'transparent',
+  Yellow: 'yellow',
 };
 
 const ColorPropType = PropTypes.oneOf(Object.values(Colors));

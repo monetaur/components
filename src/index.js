@@ -1,7 +1,17 @@
 export { default as Box } from './components/Box';
 export { default as Button } from './components/Button';
+export { default as Checkbox } from './components/Checkbox';
 export { default as Dropdown } from './components/Dropdown';
 export { default as Form } from './components/Form';
 export { default as Grid } from './components/Grid';
+export { default as HorizontalScroll } from './components/HorizontalScroll';
+export { default as Image } from './components/Image';
 export { default as Input } from './components/Input';
+export { default as Label } from './components/Label';
+export { default as List } from './components/List';
+export { default as Modal } from './components/Modal';
+export { default as Radio } from './components/Radio';
+export { default as Select } from './components/Select';
+export { default as Text } from './components/Text';
+export { default as TextArea } from './components/TextArea';
 export { ThemeProvider, withTheme, useTheme } from './components/ThemeProvider';

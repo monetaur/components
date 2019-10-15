@@ -11,34 +11,34 @@ const Button = withTheme(styled.button`
   ${(props) => styleControlOuter(props)}
 
   ${({ primary, theme }) => primary && css`
-    background-color: ${theme.palette.primaryColor};
-    border-color: ${theme.palette.primaryColor};
+    background-color: ${theme.palette.primary};
+    border-color: ${theme.palette.primary};
     color: white;
 
     :hover {
-      background-color: ${darken(0.05, theme.palette.primaryColor)};
-      border-color: ${darken(0.05, theme.palette.primaryColor)};
+      background-color: ${darken(0.05, theme.palette.primary)};
+      border-color: ${darken(0.05, theme.palette.primary)};
     }
 
     :active {
-      background-color: ${darken(0.1, theme.palette.primaryColor)};
-      border-color: ${darken(0.1, theme.palette.primaryColor)};
+      background-color: ${darken(0.1, theme.palette.primary)};
+      border-color: ${darken(0.1, theme.palette.primary)};
     }
   `}
 
   ${({ secondary, theme }) => secondary && css`
-    background-color: ${theme.palette.secondaryColor};
-    border-color: ${theme.palette.secondaryColor};
+    background-color: ${theme.palette.secondary};
+    border-color: ${theme.palette.secondary};
     color: white;
 
     :hover {
-      background-color: ${darken(0.05, theme.palette.secondaryColor)};
-      border-color: ${darken(0.05, theme.palette.secondaryColor)};
+      background-color: ${darken(0.05, theme.palette.secondary)};
+      border-color: ${darken(0.05, theme.palette.secondary)};
     }
 
     :active {
-      background-color: ${darken(0.1, theme.palette.secondaryColor)};
-      border-color: ${darken(0.1, theme.palette.secondaryColor)};
+      background-color: ${darken(0.1, theme.palette.secondary)};
+      border-color: ${darken(0.1, theme.palette.secondary)};
     }
   `}
 `);

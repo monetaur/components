@@ -12,6 +12,7 @@ export const withDefaults = () => (
     block={boolean('Block', false)}
     bordered={boolean('Bordered', true)}
     color={select('Color', { None: null, ...Colors })}
+    filled={boolean('Filled', false)}
     padded={boolean('Padded', true)}
     raised={boolean('Raised', false)}
   >
