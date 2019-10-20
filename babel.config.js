@@ -6,7 +6,12 @@ module.exports = function babelConfig(api) {
     '@babel/preset-react',
   ];
 
+  const plugins = [
+    'babel-plugin-styled-components',
+  ];
+
   return {
     presets,
+    plugins,
   };
 };
