@@ -7,7 +7,7 @@ import React, {
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
 const ModalContext = React.createContext({
   close: () => {},
@@ -26,14 +26,18 @@ const ModalBackground = styled.div`
   left: 0;
 `;
 
-const ModalWindow = withTheme(styled.div`
+const ModalWindow = styled.div`
   background-color: white;
   border-radius: ${({ theme }) => theme.borderRadius};
   margin: 0 auto;
   padding: 1em;
   max-height: 90%;
   max-width: 90%;
-`);
+`;
+
+ModalWindow.defaultProps = {
+  theme: defaultTheme,
+};
 
 function Modal({
   children,

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import ColorPropType from '../../prop-types/color';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
 const Box = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -45,6 +45,7 @@ Box.defaultProps = {
   filled: false,
   padded: true,
   raised: false,
+  theme: defaultTheme,
 };
 
-export default withTheme(Box);
+export default Box;

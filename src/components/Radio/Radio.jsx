@@ -1,7 +1,7 @@
 import React, { useMemo, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
 function generateId(chars = 5) {
   let text = '';
@@ -17,7 +17,7 @@ function generateId(chars = 5) {
 }
 
 
-const Input = withTheme(styled.input`
+const Input = styled.input`
   display: none;
 
   ${({ block }) => block && css`
@@ -48,7 +48,11 @@ const Input = withTheme(styled.input`
   :checked + label:before {
     background-color: ${({ theme }) => theme.palette.secondary};
   }
-`);
+`;
+
+Input.defaultProps = {
+  theme: defaultTheme,
+};
 
 function Radio({
   block,

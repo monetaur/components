@@ -4,14 +4,14 @@ import ColorPropType from '../../prop-types/color';
 import SizePropType from '../../prop-types/size';
 import styleControlOuter from '../../utils/styleControlOuter';
 import styleControlInner from '../../utils/styleControlInner';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
 function calculateFormControlHeight(theme) {
   const paddingVertical = theme.forms.paddingVertical.replace('em', '');
   return theme.lineHeight + (2 * paddingVertical);
 }
 
-const Select = withTheme(styled.select`
+const Select = styled.select`
   ${(props) => styleControlInner(props)}
   ${(props) => styleControlOuter(props)}
   cursor: pointer;
@@ -21,7 +21,7 @@ const Select = withTheme(styled.select`
   :invalid {
     color: ${({ theme }) => theme.palette.placeholderColor}
   }
-`);
+`;
 
 Select.propTypes = {
   block: PropTypes.bool,
@@ -41,6 +41,7 @@ Select.defaultProps = {
   raised: false,
   required: undefined,
   size: undefined,
+  theme: defaultTheme,
 };
 
 export default Select;

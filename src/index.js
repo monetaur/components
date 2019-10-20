@@ -14,4 +14,3 @@ export { default as Radio } from './components/Radio';
 export { default as Select } from './components/Select';
 export { default as Text } from './components/Text';
 export { default as TextArea } from './components/TextArea';
-export { ThemeProvider, withTheme, useTheme } from './components/ThemeProvider';

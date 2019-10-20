@@ -11,7 +11,7 @@ import SizePropType from '../../prop-types/size';
 import styleControlInner from '../../utils/styleControlInner';
 import styleControlOuter from '../../utils/styleControlOuter';
 import removeUnit from '../../utils/removeUnit';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
 function getOptionValue(option) {
   const isValue = typeof option === 'string' || typeof option === 'number';
@@ -23,11 +23,15 @@ function getOptionLabel(option) {
   return isValue ? option : option.label;
 }
 
-const DropdownContainer = withTheme(styled.div`
+const DropdownContainer = styled.div`
   ${(props) => styleControlOuter(props)}
-`);
+`;
 
-const DropdownTrigger = withTheme(styled.button`
+DropdownContainer.defaultProps = {
+  theme: defaultTheme,
+};
+
+const DropdownTrigger = styled.button`
   ${(props) => styleControlInner({ ...props, clickable: true })}
   color: ${({ hasValue, theme }) => (hasValue ? theme.palette.gray : theme.palette.placeholderColor)};
   display: block;
@@ -42,7 +46,7 @@ const DropdownTrigger = withTheme(styled.button`
     right: ${({ theme }) => theme.forms.paddingHorizontal};
     transform: scaleX(2)${({ isExpanded }) => isExpanded && ' rotate(180deg)'};
   }
-`);
+`;
 
 DropdownTrigger.propTypes = {
   isExpanded: PropTypes.bool,
@@ -52,9 +56,10 @@ DropdownTrigger.propTypes = {
 DropdownTrigger.defaultProps = {
   isExpanded: false,
   hasValue: false,
+  theme: defaultTheme,
 };
 
-const DropdownList = withTheme(styled.ul`
+const DropdownList = styled.ul`
   background-color: white;
   border: 1px solid ${({ theme }) => theme.forms.borderColor};
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -74,7 +79,7 @@ const DropdownList = withTheme(styled.ul`
     box-shadow: ${({ theme }) => theme.shadows.focus};
     outline: none;
   }
-`);
+`;
 
 DropdownList.propTypes = {
   isOpen: PropTypes.bool,
@@ -82,9 +87,10 @@ DropdownList.propTypes = {
 
 DropdownList.defaultProps = {
   isOpen: false,
+  theme: defaultTheme,
 };
 
-const DropdownOption = withTheme(styled.li`
+const DropdownOption = styled.li`
   border-bottom: 1px solid ${({ theme }) => theme.forms.borderColor};
   color: ${({ theme }) => theme.palette.gray};
   cursor: pointer;
@@ -105,7 +111,11 @@ const DropdownOption = withTheme(styled.li`
   :last-child {
     border-bottom: 0;
   }
-`);
+`;
+
+DropdownOption.defaultProps = {
+  theme: defaultTheme,
+};
 
 function Dropdown({
   block,

@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 import SizePropType from '../../prop-types/size';
 
-const Loader = withTheme(styled.div`
+const Loader = styled.div`
   color: ${({ theme }) => theme.palette.gray};
   text-align: center;
 
@@ -28,7 +28,7 @@ const Loader = withTheme(styled.div`
   ${({ size, theme }) => size && css`
     font-size: ${theme.textSizes[size]};
   `}
-`);
+`;
 
 Loader.propTypes = {
   size: SizePropType,
@@ -36,6 +36,7 @@ Loader.propTypes = {
 
 Loader.defaultProps = {
   size: undefined,
+  theme: defaultTheme,
 };
 
 export default Loader;

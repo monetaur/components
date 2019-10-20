@@ -4,9 +4,9 @@ import { darken } from 'polished';
 import SizePropType from '../../prop-types/size';
 import styleControlOuter from '../../utils/styleControlOuter';
 import styleControlInner from '../../utils/styleControlInner';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
-const Button = withTheme(styled.button`
+const Button = styled.button`
   ${(props) => styleControlInner({ ...props, clickable: true })}
   ${(props) => styleControlOuter(props)}
 
@@ -41,7 +41,7 @@ const Button = withTheme(styled.button`
       border-color: ${darken(0.1, theme.palette.secondary)};
     }
   `}
-`);
+`;
 
 Button.propTypes = {
   block: PropTypes.bool,
@@ -56,6 +56,7 @@ Button.defaultProps = {
   primary: false,
   raised: false,
   size: undefined,
+  theme: defaultTheme,
   type: 'button',
 };
 

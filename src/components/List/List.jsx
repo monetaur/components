@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
-const List = withTheme(styled.ul`
+const List = styled.ul`
   border-radius: ${({ theme }) => theme.borderRadius};
   list-style: none;
   margin-bottom: 0;
@@ -20,7 +20,7 @@ const List = withTheme(styled.ul`
       border-bottom: 0;
     }
   `}
-`);
+`;
 
 List.propTypes = {
   bordered: PropTypes.bool,
@@ -28,6 +28,7 @@ List.propTypes = {
 
 List.defaultProps = {
   bordered: false,
+  theme: defaultTheme,
 };
 
 const Item = styled.li`

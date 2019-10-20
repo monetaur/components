@@ -3,14 +3,18 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import styleControlInner from '../../utils/styleControlInner';
 import styleControlOuter from '../../utils/styleControlOuter';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 import ColorPropType from '../../prop-types/color';
 import SizePropType from '../../prop-types/size';
 
-const StyledTextArea = withTheme(styled.textarea`
+const StyledTextArea = styled.textarea`
   ${(props) => styleControlInner(props)}
   ${(props) => styleControlOuter(props)}
-`);
+`;
+
+StyledTextArea.defaultProps = {
+  theme: defaultTheme,
+};
 
 function TextArea({
   autoHeight,

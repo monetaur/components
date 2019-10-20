@@ -2,7 +2,7 @@ import React, { useMemo, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Label from '../Label';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
 function generateId(chars = 5) {
   let text = '';
@@ -18,7 +18,7 @@ function generateId(chars = 5) {
 }
 
 
-const Input = withTheme(styled.input`
+const Input = styled.input`
   display: none;
 
   + label {
@@ -41,7 +41,11 @@ const Input = withTheme(styled.input`
   :checked + label:before {
     background-color: ${({ theme }) => theme.palette.secondary};
   }
-`);
+`;
+
+Input.defaultProps = {
+  theme: defaultTheme,
+};
 
 function Checkbox({
   children,

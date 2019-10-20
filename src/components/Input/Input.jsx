@@ -4,12 +4,12 @@ import ColorPropType from '../../prop-types/color';
 import SizePropType from '../../prop-types/size';
 import styleControlOuter from '../../utils/styleControlOuter';
 import styleControlInner from '../../utils/styleControlInner';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
-const Input = withTheme(styled.input`
+const Input = styled.input`
   ${(props) => styleControlInner(props)}
   ${(props) => styleControlOuter(props)}
-`);
+`;
 
 Input.propTypes = {
   block: PropTypes.bool,
@@ -24,6 +24,7 @@ Input.defaultProps = {
   color: undefined,
   raised: false,
   size: undefined,
+  theme: defaultTheme,
   type: 'text',
 };
 

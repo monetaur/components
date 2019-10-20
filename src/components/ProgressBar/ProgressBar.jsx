@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
-const ProgressBar = withTheme(styled.div`
+const ProgressBar = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: ${({ theme }) => theme.borderRadius};
   font-size: ${({ theme }) => theme.textSizes.sm};
@@ -21,7 +21,7 @@ const ProgressBar = withTheme(styled.div`
     width: ${({ percent }) => percent}%;
     z-index: -1;
   }
-`);
+`;
 
 ProgressBar.propTypes = {
   percent: PropTypes.number,
@@ -29,6 +29,7 @@ ProgressBar.propTypes = {
 
 ProgressBar.defaultProps = {
   percent: 0,
+  theme: defaultTheme,
 };
 
 export default ProgressBar;

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
 function getWidth(size, columns) {
   return size === 'auto' ? size : `${size * (100 / columns)}%`;
@@ -11,7 +11,7 @@ const ColumnSizePropType = PropTypes.oneOfType([
   PropTypes.oneOf(['auto']),
 ]);
 
-const Column = withTheme(styled.div`
+const Column = styled.div`
   width: 100%;
 
   ${({ xs, theme }) => xs && css`
@@ -39,7 +39,7 @@ const Column = withTheme(styled.div`
       width: ${getWidth(xl, theme.gridColumns)};
     }
   `}
-`);
+`;
 
 Column.propTypes = {
   xs: ColumnSizePropType,
@@ -53,6 +53,7 @@ Column.defaultProps = {
   sm: undefined,
   lg: undefined,
   xl: undefined,
+  theme: defaultTheme,
 };
 
 const Grid = styled.div`

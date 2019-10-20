@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import SizePropType from '../../prop-types/size';
 import ColorPropType from '../../prop-types/color';
-import { withTheme } from '../ThemeProvider';
+import defaultTheme from '../../../themes/default';
 
-const Text = withTheme(styled.span`
+const Text = styled.span`
   color: ${({ theme }) => theme.palette.textColor};
 
   ${({ bold }) => bold && css`
@@ -31,7 +31,7 @@ const Text = withTheme(styled.span`
   ${({ uppercase }) => uppercase && css`
     text-transform: uppercase;
   `}
-`);
+`;
 
 Text.propTypes = {
   block: PropTypes.bool,
@@ -50,6 +50,7 @@ Text.defaultProps = {
   color: undefined,
   right: undefined,
   size: undefined,
+  theme: defaultTheme,
   uppercase: false,
 };
 
