@@ -11,6 +11,15 @@ module.exports = function babelConfig(api) {
   ];
 
   return {
+    env: {
+      es6: {
+        presets: [
+          ['@babel/preset-env', {
+            modules: false,
+          }],
+        ],
+      },
+    },
     presets,
     plugins,
   };

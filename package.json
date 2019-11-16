@@ -4,6 +4,7 @@
   "description": "A set of React components used to build the Monetaur platform",
   "main": "dist/index.js",
   "module": "lib/index.js",
+  "sideEffects": false,
   "devDependencies": {
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
@@ -39,7 +40,7 @@
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build": "npm run build:es6 && npm run build:cjs",
-    "build:es6": "babel --ignore '**/*.test.jsx,**/*.stories.jsx' -d lib/ src/",
+    "build:es6": "BABEL_ENV=es6 babel --ignore '**/*.test.jsx,**/*.stories.jsx' -d lib/ src/",
     "build:cjs": "webpack --mode production",
     "build-storybook": "build-storybook",
     "clean": "rm -rf lib && rm -rf dist",
