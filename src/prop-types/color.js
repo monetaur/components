@@ -10,6 +10,7 @@ export const Colors = {
   Red: 'red',
   Secondary: 'secondary',
   Transparent: 'transparent',
+  White: 'white',
   Yellow: 'yellow',
 };
 

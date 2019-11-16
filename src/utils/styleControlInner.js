@@ -8,9 +8,10 @@ function calculateFormControlHeight(theme) {
 }
 
 const styleControlInner = ({
-  clickable,
+  clickable = false,
   color,
-  raised,
+  input = true,
+  raised = false,
   theme,
 }) => css`
   background-color: white;
@@ -22,9 +23,30 @@ const styleControlInner = ({
   font-size: inherit;
   line-height: ${theme.lineHeight};
   min-height: calc(${calculateFormControlHeight(theme)}em + 2px);
-  min-width: 200px;
   padding: ${`${theme.forms.paddingVertical} ${theme.forms.paddingHorizontal}`};
   transition: all 200ms;
+
+  :focus {
+    box-shadow: ${theme.shadows.focus};
+    outline: none;
+  }
+
+  :hover {
+    border-color: ${darken(0.2, theme.forms.borderColor)};
+  }
+
+  :disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  ::placeholder {
+    color: ${theme.palette.placeholderColor};
+  }
+
+  ${input && css`
+    min-width: ${theme.forms.minWidth};
+  `}
 
   ${clickable && css`
     cursor: pointer;
@@ -45,24 +67,6 @@ const styleControlInner = ({
   ${raised && css`
     box-shadow: ${theme.shadows.light};
   `}
-
-  :disabled {
-    pointer-events: none;
-    opacity: 0.6;
-  }
-
-  :focus {
-    box-shadow: ${theme.shadows.focus};
-    outline: none;
-  }
-
-  :hover {
-    border-color: ${darken(0.2, theme.forms.borderColor)};
-  }
-
-  ::placeholder {
-    color: ${theme.palette.placeholderColor};
-  }
 `;
 
 export default styleControlInner;

@@ -46,6 +46,7 @@ function Modal({
   onOpen,
   trigger,
 }) {
+  const backgroundEl = useRef(null);
   const isFirstRender = useRef(true);
   const [showModal, setShowModal] = useState(isOpen);
   const domNode = document.body;
@@ -57,6 +58,12 @@ function Modal({
   const close = useCallback(() => {
     setShowModal(false);
   }, []);
+
+  const handleBackgroundClick = useCallback((e) => {
+    if (e.target === backgroundEl.current) {
+      close();
+    }
+  }, [close]);
 
   useEffect(() => {
     setShowModal(isOpen);
@@ -80,7 +87,10 @@ function Modal({
       {trigger}
       {showModal && ReactDOM.createPortal(
         (
-          <ModalBackground>
+          <ModalBackground
+            onClick={handleBackgroundClick}
+            ref={backgroundEl}
+          >
             <ModalWindow>
               {children}
             </ModalWindow>

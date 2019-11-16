@@ -6,6 +6,7 @@ import defaultTheme from '../../../themes/default';
 
 const Text = styled.span`
   color: ${({ theme }) => theme.palette.textColor};
+  vertical-align: middle;
 
   ${({ bold }) => bold && css`
     font-weight: bold;

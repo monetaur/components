@@ -4,6 +4,7 @@ import defaultTheme from '../../../themes/default';
 
 const List = styled.ul`
   border-radius: ${({ theme }) => theme.borderRadius};
+  display: ${({ block }) => (block ? 'block' : 'inline-block')};
   list-style: none;
   margin-bottom: 0;
   margin-top: 0;
@@ -23,17 +24,21 @@ const List = styled.ul`
 `;
 
 List.propTypes = {
+  block: PropTypes.bool,
   bordered: PropTypes.bool,
 };
 
 List.defaultProps = {
+  block: false,
   bordered: false,
   theme: defaultTheme,
 };
 
 const Item = styled.li`
-  ${({ padded }) => padded && css`
-    padding: 1em;
+  line-height: ${({ theme }) => theme.lineHeight};
+
+  ${({ padded, theme }) => padded && css`
+    padding: ${theme.forms.paddingVertical} ${theme.forms.paddingHorizontal};
   `}
 `;
 
@@ -43,6 +48,7 @@ Item.propTypes = {
 
 Item.defaultProps = {
   padded: false,
+  theme: defaultTheme,
 };
 
 List.Item = Item;

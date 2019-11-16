@@ -7,10 +7,12 @@ const defaultTheme = {
   },
   forms: {
     borderColor: '#ced4da',
+    minWidth: '200px',
     paddingVertical: '0.4em',
     paddingHorizontal: '0.8em',
   },
   gridColumns: 12,
+  gridGutter: '0.5em',
   lineHeight: 1.5,
   palette: {
     primary: '#21C5B4',
@@ -25,6 +27,7 @@ const defaultTheme = {
     blue: '#2184c5',
     purple: '#7c4dff',
     pink: '#ff4081',
+    white: 'white',
     yellow: 'yellow',
     transparent: 'transparent',
   },

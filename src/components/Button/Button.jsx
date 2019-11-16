@@ -7,8 +7,10 @@ import styleControlInner from '../../utils/styleControlInner';
 import defaultTheme from '../../../themes/default';
 
 const Button = styled.button`
-  ${(props) => styleControlInner({ ...props, clickable: true })}
+  ${(props) => styleControlInner({ ...props, clickable: true, input: false })}
   ${(props) => styleControlOuter(props)}
+  appearance: none;
+  text-decoration: none;
 
   ${({ primary, theme }) => primary && css`
     background-color: ${theme.palette.primary};

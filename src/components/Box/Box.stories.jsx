@@ -9,12 +9,13 @@ export default {
 
 export const withDefaults = () => (
   <Box
-    block={boolean('Block', false)}
+    block={boolean('Block', true)}
     bordered={boolean('Bordered', true)}
     color={select('Color', { None: null, ...Colors })}
     filled={boolean('Filled', false)}
     padded={boolean('Padded', true)}
     raised={boolean('Raised', false)}
+    stretch={boolean('Stretch', false)}
   >
     {text('Content', 'Box Content')}
   </Box>

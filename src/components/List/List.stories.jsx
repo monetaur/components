@@ -7,7 +7,10 @@ export default {
 };
 
 export const withDefaults = () => (
-  <List bordered={boolean('Bordered', false)}>
+  <List
+    block={boolean('Block', false)}
+    bordered={boolean('Bordered', false)}
+  >
     <List.Item
       padded={boolean('Padded', false)}
     >

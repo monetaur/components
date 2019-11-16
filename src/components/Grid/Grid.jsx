@@ -60,12 +60,12 @@ const Grid = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  ${({ padded }) => padded && css`
-    margin-left: -1em;
-    margin-right: -1em;
+  ${({ padded, theme }) => padded && css`
+    margin-left: -${theme.gridGutter};
+    margin-right: -${theme.gridGutter};
 
     > ${Column} {
-      padding: 1em;
+      padding: ${theme.gridGutter} ${theme.gridGutter};
     }
   `}
 `;
@@ -76,6 +76,7 @@ Grid.propTypes = {
 
 Grid.defaultProps = {
   padded: false,
+  theme: defaultTheme,
 };
 
 Grid.Column = Column;

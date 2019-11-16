@@ -4,7 +4,6 @@ import ColorPropType from '../../prop-types/color';
 import defaultTheme from '../../../themes/default';
 
 const Box = styled.div`
-  border-radius: ${({ theme }) => theme.borderRadius};
   border-style: solid;
   border-width: ${({ bordered }) => (bordered ? '1px' : 0)};
   display: ${({ block }) => (block ? 'block' : 'inline-block')};
@@ -20,12 +19,20 @@ const Box = styled.div`
     `}
   `}
 
+  ${({ padded }) => padded && css`
+    padding: 1em;
+  `}
+
   ${({ raised }) => raised && css`
     box-shadow: ${({ theme }) => theme.shadows.light};
   `}
 
-  ${({ padded }) => padded && css`
-    padding: 1em;
+  ${({ rounded }) => rounded && css`
+    border-radius: ${({ theme }) => theme.borderRadius};
+  `}
+
+  ${({ stretch }) => stretch && css`
+    height: 100%;
   `}
 `;
 
@@ -36,16 +43,20 @@ Box.propTypes = {
   filled: PropTypes.bool,
   padded: PropTypes.bool,
   raised: PropTypes.bool,
+  rounded: PropTypes.bool,
+  stretch: PropTypes.bool,
 };
 
 Box.defaultProps = {
-  block: false,
+  block: true,
   bordered: true,
   color: undefined,
   filled: false,
   padded: true,
   raised: false,
   theme: defaultTheme,
+  rounded: true,
+  stretch: false,
 };
 
 export default Box;
