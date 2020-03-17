@@ -8,7 +8,6 @@ const Loader = styled.div`
 
   :before {
     animation: spin 1s linear infinite;
-    background-color: #fff;
     border: 0.4em solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     border-top: 0.4em solid ${({ theme }) => theme.palette.primary};

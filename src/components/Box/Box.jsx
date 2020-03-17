@@ -13,7 +13,7 @@ const Box = styled.div`
     border-color: ${theme.palette[color]};
     ${filled && css`
       background-color: ${theme.palette[color]};
-      ${![theme.palette.transparent, theme.palette.yellow].includes(color) && css`
+      ${![theme.palette.transparent, theme.palette.white, theme.palette.yellow].includes(color) && css`
         color: white;
       `};
     `}
@@ -30,10 +30,6 @@ const Box = styled.div`
   ${({ rounded }) => rounded && css`
     border-radius: ${({ theme }) => theme.borderRadius};
   `}
-
-  ${({ stretch }) => stretch && css`
-    height: 100%;
-  `}
 `;
 
 Box.propTypes = {
@@ -44,7 +40,6 @@ Box.propTypes = {
   padded: PropTypes.bool,
   raised: PropTypes.bool,
   rounded: PropTypes.bool,
-  stretch: PropTypes.bool,
 };
 
 Box.defaultProps = {
@@ -56,7 +51,6 @@ Box.defaultProps = {
   raised: false,
   theme: defaultTheme,
   rounded: true,
-  stretch: false,
 };
 
 export default Box;

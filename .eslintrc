@@ -31,6 +31,7 @@
         ]
       }
     }],
-    "react/jsx-fragments": [1, "element"]
+    "react/jsx-fragments": [1, "element"],
+    "react/jsx-props-no-spreading": 0
   }
 }

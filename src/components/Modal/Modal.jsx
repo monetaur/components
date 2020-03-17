@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import defaultTheme from '../../../themes/default';
+import SizePropType from '../../prop-types/size';
 
 const ModalContext = React.createContext({
   close: () => {},
@@ -24,15 +25,26 @@ const ModalBackground = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 15;
 `;
+
+const Sizes = {
+  xs: '300px',
+  sm: '500px',
+  md: '700px',
+  lg: '900px',
+  xl: '1100px',
+};
 
 const ModalWindow = styled.div`
   background-color: white;
   border-radius: ${({ theme }) => theme.borderRadius};
   margin: 0 auto;
-  padding: 1em;
+  overflow: auto;
+  padding: 1em 2em;
   max-height: 90%;
-  max-width: 90%;
+  width: 90%;
+  max-width: ${({ size }) => Sizes[size] || Sizes.md};
 `;
 
 ModalWindow.defaultProps = {
@@ -44,6 +56,7 @@ function Modal({
   isOpen,
   onClose,
   onOpen,
+  size,
   trigger,
 }) {
   const backgroundEl = useRef(null);
@@ -82,17 +95,19 @@ function Modal({
     }
   }, [onClose, onOpen, showModal]);
 
+  const context = { open, close };
+
   return (
-    <ModalContext.Provider value={{ open, close }}>
-      {trigger}
+    <ModalContext.Provider value={context}>
+      {typeof trigger === 'function' ? trigger(context) : trigger}
       {showModal && ReactDOM.createPortal(
         (
           <ModalBackground
             onClick={handleBackgroundClick}
             ref={backgroundEl}
           >
-            <ModalWindow>
-              {children}
+            <ModalWindow size={size}>
+              {typeof children === 'function' ? children(context) : children}
             </ModalWindow>
           </ModalBackground>
         ),
@@ -103,17 +118,25 @@ function Modal({
 }
 
 Modal.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func,
+  ]).isRequired,
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   onOpen: PropTypes.func,
-  trigger: PropTypes.node,
+  size: SizePropType,
+  trigger: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func,
+  ]),
 };
 
 Modal.defaultProps = {
   isOpen: false,
   onClose: () => {},
   onOpen: () => {},
+  size: undefined,
   trigger: undefined,
 };
 

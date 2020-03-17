@@ -15,28 +15,35 @@ const Column = styled.div`
   width: 100%;
 
   ${({ xs, theme }) => xs && css`
-    flex: ${xs === 'auto' ? 1 : 0} 0 ${getWidth(xs, theme.gridColumns)};
+    flex: ${xs === 'auto' ? 1 : 0} 0 ${xs === 'auto' ? 0 : getWidth(xs, theme.gridColumns)};
     width: ${getWidth(xs, theme.gridColumns)};
   `}
 
   ${({ sm, theme }) => theme.breakpoints.tablet && sm && css`
     @media only screen and (min-width: ${theme.breakpoints.tablet}px) {
-      flex: ${sm === 'auto' ? 1 : 0} 0 ${getWidth(sm, theme.gridColumns)};
+      flex: ${sm === 'auto' ? 1 : 0} 0 ${sm === 'auto' ? 0 : getWidth(sm, theme.gridColumns)};
       width: ${getWidth(sm, theme.gridColumns)};
     }
   `}
 
   ${({ lg, theme }) => theme.breakpoints.desktop && lg && css`
     @media only screen and (min-width: ${theme.breakpoints.desktop}px) {
-      flex: ${lg === 'auto' ? 1 : 0} 0 ${getWidth(lg, theme.gridColumns)};
+      flex: ${lg === 'auto' ? 1 : 0} 0 ${lg === 'auto' ? 0 : getWidth(lg, theme.gridColumns)};
       width: ${getWidth(lg, theme.gridColumns)};
     }
   `}
 
   ${({ xl, theme }) => theme.breakpoints.wide && xl && css`
     @media only screen and (min-width: ${theme.breakpoints.wide}px) {
-      flex: ${xl === 'auto' ? 1 : 0} 0 ${getWidth(xl, theme.gridColumns)};
+      flex: ${xl === 'auto' ? 1 : 0} 0 ${xl === 'auto' ? 0 : getWidth(xl, theme.gridColumns)};
       width: ${getWidth(xl, theme.gridColumns)};
+    }
+  `}
+
+  ${({ xxl, theme }) => theme.breakpoints.extraWide && xxl && css`
+    @media only screen and (min-width: ${theme.breakpoints.extraWide}px) {
+      flex: ${xxl === 'auto' ? 1 : 0} 0 ${xxl === 'auto' ? 0 : getWidth(xxl, theme.gridColumns)};
+      width: ${getWidth(xxl, theme.gridColumns)};
     }
   `}
 `;
@@ -46,6 +53,7 @@ Column.propTypes = {
   sm: ColumnSizePropType,
   lg: ColumnSizePropType,
   xl: ColumnSizePropType,
+  xxl: ColumnSizePropType,
 };
 
 Column.defaultProps = {
@@ -53,6 +61,7 @@ Column.defaultProps = {
   sm: undefined,
   lg: undefined,
   xl: undefined,
+  xxl: undefined,
   theme: defaultTheme,
 };
 

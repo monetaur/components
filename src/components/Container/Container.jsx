@@ -8,6 +8,11 @@ const Container = styled.div`
   padding-left: calc(2 * ${({ theme }) => theme.gridGutter});
   padding-right: calc(2 * ${({ theme }) => theme.gridGutter});
 
+  ${({ padded, theme }) => padded && css`
+    padding-bottom: calc(2 * ${theme.gridGutter});
+    padding-top: calc(2 * ${theme.gridGutter});
+  `}
+
   ${({ block, theme }) => !block && css`
     @media only screen and (min-width: ${theme.breakpoints.tablet}px) {
       width: ${theme.breakpoints.tablet}px;

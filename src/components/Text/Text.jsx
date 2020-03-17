@@ -5,8 +5,11 @@ import ColorPropType from '../../prop-types/color';
 import defaultTheme from '../../../themes/default';
 
 const Text = styled.span`
-  color: ${({ theme }) => theme.palette.textColor};
+  line-height: ${({ theme }) => theme.lineHeight};
+  overflow-wrap: break-word;
   vertical-align: middle;
+  word-wrap: break-word;
+  word-break: break-word;
 
   ${({ bold }) => bold && css`
     font-weight: bold;

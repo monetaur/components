@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import useIntersection from '../../hooks/useIntersection';
+import { useIntersection } from '@monetaur/hooks';
 
 const StyledImage = styled.img`
   max-height: 100%;
@@ -9,6 +9,10 @@ const StyledImage = styled.img`
 
   ${({ block }) => block && css`
     display: block;
+  `}
+
+  ${({ raised }) => raised && css`
+    box-shadow: ${({ theme }) => theme.shadows.light};
   `}
 `;
 
@@ -18,6 +22,7 @@ function Image({
   height,
   lazy,
   onLoad,
+  raised,
   src,
   width,
 }) {
@@ -34,6 +39,7 @@ function Image({
       block={block}
       height={height}
       onLoad={onLoad}
+      raised={raised}
       ref={imageElement}
       src={(!lazy || hasIntersected) ? src : undefined}
       width={width}
@@ -50,6 +56,7 @@ Image.propTypes = {
   ]),
   lazy: PropTypes.bool,
   onLoad: PropTypes.func,
+  raised: PropTypes.bool,
   src: PropTypes.string.isRequired,
   width: PropTypes.oneOfType([
     PropTypes.number,
@@ -62,6 +69,7 @@ Image.defaultProps = {
   height: undefined,
   lazy: true,
   onLoad: () => {},
+  raised: false,
   width: undefined,
 };
 

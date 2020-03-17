@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import defaultTheme from '../../../themes/default';
 
 const Form = styled.form`
-
+  padding: calc(2 * ${({ theme }) => theme.gridGutter}) 0;
 `;
+
+Form.defaultProps = {
+  theme: defaultTheme,
+};
 
 const Field = styled.div`
   display: inline-block;

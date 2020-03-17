@@ -15,7 +15,6 @@ export const withDefaults = () => (
     filled={boolean('Filled', false)}
     padded={boolean('Padded', true)}
     raised={boolean('Raised', false)}
-    stretch={boolean('Stretch', false)}
   >
     {text('Content', 'Box Content')}
   </Box>

@@ -19,7 +19,7 @@ const Select = styled.select`
   text-align: inherit;
 
   :invalid {
-    color: ${({ theme }) => theme.palette.placeholderColor}
+    color: ${({ theme }) => theme.palette.placeholder}
   }
 `;
 

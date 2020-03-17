@@ -58,6 +58,7 @@
   "homepage": "https://github.com/monetaur/components#readme",
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.3",
+    "@monetaur/hooks": "^1.0.1",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "styled-components": "^5.0.0-beta.9"

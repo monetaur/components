@@ -27,7 +27,7 @@ const Input = styled.input`
   `}
 
   + label {
-    color: ${({ theme }) => theme.palette.mutedTextColor};
+    color: ${({ theme }) => theme.palette.mutedText};
     line-height: ${({ theme }) => theme.lineHeight};
     margin-right: 0.5em;
   }

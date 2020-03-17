@@ -17,19 +17,19 @@ export const withDefaults = () => (
 
 export const withResponsiveWidths = () => (
   <Grid padded={boolean('Padded', false)}>
-    <Grid.Column sm="4" lg="3" xl="2"><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
-    <Grid.Column sm="4" lg="3" xl="2"><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
-    <Grid.Column sm="4" lg="3" xl="2"><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
-    <Grid.Column sm="4" lg="3" xl="2"><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
-    <Grid.Column sm="4" lg="3" xl="2"><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
-    <Grid.Column sm="4" lg="3" xl="2"><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
+    <Grid.Column sm={4} lg={3} xl={2}><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
+    <Grid.Column sm={4} lg={3} xl={2}><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
+    <Grid.Column sm={4} lg={3} xl={2}><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
+    <Grid.Column sm={4} lg={3} xl={2}><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
+    <Grid.Column sm={4} lg={3} xl={2}><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
+    <Grid.Column sm={4} lg={3} xl={2}><Box block>xs=6, sm=4, lg=3, xl=2</Box></Grid.Column>
   </Grid>
 );
 
 export const withAutoWidths = () => (
   <Grid>
-    <Grid.Column sm="4" lg="3" xl="2"><Box block>sm=4 lg=3 xl=2</Box></Grid.Column>
+    <Grid.Column sm={4} lg={3} xl={2}><Box block>sm=4 lg=3 xl=2</Box></Grid.Column>
     <Grid.Column xs="auto"><Box block>xs=auto</Box></Grid.Column>
-    <Grid.Column sm="4" lg="3" xl="2"><Box block>sm=4 lg=3 xl=2</Box></Grid.Column>
+    <Grid.Column sm={4} lg={3} xl={2}><Box block>sm=4 lg=3 xl=2</Box></Grid.Column>
   </Grid>
 );

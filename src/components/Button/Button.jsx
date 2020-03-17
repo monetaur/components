@@ -10,6 +10,8 @@ const Button = styled.button`
   ${(props) => styleControlInner({ ...props, clickable: true, input: false })}
   ${(props) => styleControlOuter(props)}
   appearance: none;
+  min-width: 90px;
+  text-align: center;
   text-decoration: none;
 
   ${({ primary, theme }) => primary && css`
@@ -20,6 +22,7 @@ const Button = styled.button`
     :hover {
       background-color: ${darken(0.05, theme.palette.primary)};
       border-color: ${darken(0.05, theme.palette.primary)};
+      color: white;
     }
 
     :active {
@@ -36,11 +39,29 @@ const Button = styled.button`
     :hover {
       background-color: ${darken(0.05, theme.palette.secondary)};
       border-color: ${darken(0.05, theme.palette.secondary)};
+      color: white;
     }
 
     :active {
       background-color: ${darken(0.1, theme.palette.secondary)};
       border-color: ${darken(0.1, theme.palette.secondary)};
+    }
+  `}
+
+  ${({ danger, theme }) => danger && css`
+    background-color: ${theme.palette.red};
+    border-color: ${theme.palette.red};
+    color: white;
+
+    :hover {
+      background-color: ${darken(0.05, theme.palette.red)};
+      border-color: ${darken(0.05, theme.palette.red)};
+      color: white;
+    }
+
+    :active {
+      background-color: ${darken(0.1, theme.palette.red)};
+      border-color: ${darken(0.1, theme.palette.red)};
     }
   `}
 `;
