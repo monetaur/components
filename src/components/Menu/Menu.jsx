@@ -33,7 +33,7 @@ function MenuItem(props) {
 
 const Menu = styled(List)`
   ${({ horizontal }) => horizontal && css`
-    > ${MenuItem} {
+    > ${List.Item} {
       display: inline-block;
       vertical-align: middle;
     }
