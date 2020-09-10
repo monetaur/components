@@ -46,7 +46,7 @@
     "build-storybook": "build-storybook",
     "clean": "rm -rf lib && rm -rf dist",
     "lint": "eslint --ext .jsx --ext .js src",
-    "semantic-release": "semantic-release"
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",
