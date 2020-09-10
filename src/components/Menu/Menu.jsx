@@ -5,7 +5,7 @@ import List from '../List';
 import defaultTheme from '../../../themes/default';
 
 const MenuLink = styled.a`
-  color: ${({ theme }) => theme.palette.textColor};
+  color: ${({ theme }) => theme.text.colors.base};
   display: block;
   padding: 0.5em 1em;
 
@@ -15,7 +15,7 @@ const MenuLink = styled.a`
 
   :hover {
     background-color: rgba(0, 0, 0, 0.1);
-    color: ${({ theme }) => theme.palette.textColor};
+    color: ${({ theme }) => theme.text.colors.base};
   }
 `;
 

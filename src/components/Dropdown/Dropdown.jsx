@@ -33,7 +33,7 @@ DropdownContainer.defaultProps = {
 
 const DropdownTrigger = styled.button`
   ${(props) => styleControlInner({ ...props, clickable: true })}
-  color: ${({ hasValue, theme }) => (hasValue ? theme.palette.gray : theme.palette.placeholder)};
+  color: ${({ hasValue, theme }) => (hasValue ? theme.palette.gray : theme.text.colors.placeholder)};
   display: block;
   padding-right: ${({ theme }) => 2 * removeUnit(theme.forms.paddingHorizontal)}em;
   text-align: inherit;

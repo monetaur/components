@@ -18,10 +18,6 @@ const defaultTheme = {
   palette: {
     primary: '#21C5B4',
     secondary: '#7B94B1',
-    textColor: 'rgba(0, 0, 0, 0.87)',
-    mutedText: '#666',
-    placeholder: '#aaa',
-    placeholderInverse: '#ddd',
     black: 'rgba(0, 0, 0, 0.87)',
     gray: '#666',
     red: '#c52132',
@@ -33,11 +29,18 @@ const defaultTheme = {
     yellow: 'yellow',
     transparent: 'transparent',
   },
-  textSizes: {
-    xs: '0.6em',
-    sm: '0.8em',
-    lg: '1.3em',
-    xl: '1.8em',
+  text: {
+    colors: {
+      base: 'rgba(0, 0, 0, 0.87)',
+      muted: '#666',
+      placeholder: '#aaa',
+    },
+    sizes: {
+      xs: '0.6em',
+      sm: '0.8em',
+      lg: '1.3em',
+      xl: '1.8em',
+    },
   },
   sizes: {
     xs: '0.6em',
