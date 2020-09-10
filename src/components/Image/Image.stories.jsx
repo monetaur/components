@@ -11,6 +11,8 @@ export const withDefaults = () => (
   <Image
     alt={text('Alt', 'Placeholder')}
     avatar={boolean('Avatar', false)}
+    block={boolean('Block', false)}
+    circular={boolean('Circular', false)}
     height={number('Height', undefined)}
     onLoad={action('Image Loaded')}
     src="https://placehold.it/200x100"
@@ -22,6 +24,8 @@ export const withLazyLoading = () => (
   <Image
     alt={text('Alt', 'Placeholder')}
     avatar={boolean('Avatar', false)}
+    block={boolean('Block', false)}
+    circular={boolean('Circular', false)}
     height={number('Height', undefined)}
     lazy
     onLoad={action('Image Loaded')}
