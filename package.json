@@ -45,6 +45,7 @@
     "build:cjs": "webpack --mode production",
     "build-storybook": "build-storybook",
     "clean": "rm -rf lib && rm -rf dist",
+    "get-version": "echo $npm_package_version",
     "lint": "eslint --ext .jsx --ext .js src",
     "release": "semantic-release"
   },
