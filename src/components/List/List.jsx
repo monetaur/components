@@ -4,11 +4,15 @@ import defaultTheme from '../../../themes/default';
 
 const List = styled.ul`
   border-radius: ${({ theme }) => theme.borderRadius};
-  display: ${({ block }) => (block ? 'block' : 'inline-block')};
   list-style: none;
   margin-bottom: 0;
   margin-top: 0;
   padding-left: 0;
+
+  ${({ block }) => !block && css`
+    display: inline-block;
+    vertical-align: middle;
+  `}
 
   ${({ bordered, theme }) => bordered && css`
     border: 1px solid ${theme.forms.borderColor};

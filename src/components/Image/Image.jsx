@@ -6,6 +6,7 @@ import { useIntersection } from '@monetaur/hooks';
 const StyledImage = styled.img`
   max-height: 100%;
   max-width: 100%;
+  vertical-align: middle;
 
   ${({ block }) => block && css`
     display: block;
