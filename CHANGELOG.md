@@ -1,3 +1,10 @@
+# [1.0.0-beta.2](https://github.com/monetaur/components/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2020-09-14)
+
+
+### Bug Fixes
+
+* Align dist build filename to package.json ([18c8240](https://github.com/monetaur/components/commit/18c82407acaff9826abe0b2ed9c928b098ee6967))
+
 # 1.0.0-beta.1 (2020-09-10)
 
 
