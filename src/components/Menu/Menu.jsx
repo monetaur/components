@@ -6,6 +6,7 @@ import defaultTheme from '../../../themes/default';
 
 const MenuLink = styled.a`
   color: ${({ theme }) => theme.text.colors.base};
+  cursor: pointer;
   display: block;
   padding: 0.5em 1em;
 
