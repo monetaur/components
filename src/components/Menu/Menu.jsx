@@ -8,7 +8,7 @@ const MenuLink = styled.a`
   color: ${({ theme }) => theme.text.colors.base};
   cursor: pointer;
   display: block;
-  padding: 0.5em 1em;
+  padding: 0.8em 2em;
 
   &.active {
     background-color: rgba(0, 0, 0, 0.05);
