@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
 import Modal from './Modal';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Modal>test content</Modal>, div);
-  ReactDOM.unmountComponentAtNode(div);
+  render(<Modal>test content</Modal>);
 });
