@@ -1,3 +1,17 @@
+# [1.0.0-beta.3](https://github.com/monetaur/components/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2020-12-15)
+
+
+### Bug Fixes
+
+* Add cursor style to MenuLink ([298a881](https://github.com/monetaur/components/commit/298a881702027d53731cd157ff4a3a975bab9360))
+* Build commonjs output ([8a8d518](https://github.com/monetaur/components/commit/8a8d518dd8cce92dc14a1938c5884396e84251b4))
+
+
+### Features
+
+* Add padding to MenuLink ([6539bc5](https://github.com/monetaur/components/commit/6539bc55077067a4d4738059e83aa814c88c293d))
+* **Loader:** Add expand prop to Loader ([e939490](https://github.com/monetaur/components/commit/e93949047062c8930f37af94cfe0e663c3a8be5e))
+
 # [1.0.0-beta.2](https://github.com/monetaur/components/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2020-09-14)
 
 
