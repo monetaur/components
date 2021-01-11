@@ -1,3 +1,10 @@
+# [1.0.0-beta.4](https://github.com/monetaur/components/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-01-11)
+
+
+### Bug Fixes
+
+* Add className prop to Image ([7902132](https://github.com/monetaur/components/commit/79021326e7a8dd47819d7fb2463b4c8ba35bf748))
+
 # [1.0.0-beta.3](https://github.com/monetaur/components/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2020-12-15)
 
 
