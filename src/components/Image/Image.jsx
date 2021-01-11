@@ -25,6 +25,7 @@ function Image({
   alt,
   block,
   circular,
+  className,
   height,
   lazy,
   onLoad,
@@ -43,6 +44,7 @@ function Image({
     <StyledImage
       alt={alt}
       block={block}
+      className={className}
       circular={circular}
       height={height}
       onLoad={onLoad}
@@ -57,6 +59,7 @@ function Image({
 Image.propTypes = {
   alt: PropTypes.string.isRequired,
   block: PropTypes.bool,
+  className: PropTypes.string,
   circular: PropTypes.bool,
   height: PropTypes.oneOfType([
     PropTypes.number,
@@ -74,6 +77,7 @@ Image.propTypes = {
 
 Image.defaultProps = {
   block: false,
+  className: undefined,
   circular: false,
   height: undefined,
   lazy: true,
