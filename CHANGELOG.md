@@ -1,3 +1,10 @@
+# [1.0.0-beta.5](https://github.com/monetaur/components/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2021-02-02)
+
+
+### Bug Fixes
+
+* Add onChange prop to Dropdown ([fb94f6d](https://github.com/monetaur/components/commit/fb94f6d0087da8893cf34b96de4e41833e8634e0))
+
 # [1.0.0-beta.4](https://github.com/monetaur/components/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-01-11)
 
 
