@@ -119,6 +119,7 @@ DropdownOption.defaultProps = {
 
 function Dropdown({
   block,
+  onChange,
   options,
   placeholder,
   raised,
@@ -133,6 +134,14 @@ function Dropdown({
   const selectedOption = options.find((option) => getOptionValue(option) === value);
   const triggerLabel = (selectedOption && getOptionLabel(selectedOption)) || placeholder;
 
+  const changeValue = useCallback((newValue) => {
+    setValue(newValue);
+
+    if (onChange) {
+      onChange(newValue);
+    }
+  }, [onChange]);
+
   const handleTriggerClick = useCallback((e) => {
     e.preventDefault();
     setIsOpen(!isOpen);
@@ -145,7 +154,7 @@ function Dropdown({
 
   const optionClickHandlers = useMemo(() => options.map((option) => (e) => {
     e.preventDefault();
-    setValue(getOptionValue(option));
+    changeValue(getOptionValue(option));
     closeDropdown();
     triggerElement.current.focus();
   }), [closeDropdown, options.length]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -165,12 +174,12 @@ function Dropdown({
       e.preventDefault();
       const highlightedOption = options[highlightedIndex];
       if (highlightedOption) {
-        setValue(getOptionValue(highlightedOption));
+        changeValue(getOptionValue(highlightedOption));
         closeDropdown();
         triggerElement.current.focus();
       }
     }
-  }, [closeDropdown, highlightedIndex, options]);
+  }, [changeValue, closeDropdown, highlightedIndex, options]);
 
   const handleClickOutside = useCallback((e) => {
     if (containerElement.current && !containerElement.current.contains(e.target)) {
@@ -220,6 +229,7 @@ function Dropdown({
 
 Dropdown.propTypes = {
   block: PropTypes.bool,
+  onChange: PropTypes.func,
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.oneOf([
       PropTypes.string,
@@ -241,6 +251,7 @@ Dropdown.propTypes = {
 
 Dropdown.defaultProps = {
   block: false,
+  onChange: undefined,
   options: [],
   placeholder: undefined,
   raised: false,
