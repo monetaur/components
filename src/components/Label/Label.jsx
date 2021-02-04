@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import defaultTheme from '../../../themes/default';
 
 const Label = styled.label`
-  color: ${({ theme }) => theme.palette.mutedText};
+  color: ${({ theme }) => theme.text.colors.muted};
   display: block;
   line-height: ${({ theme }) => theme.lineHeight};
 `;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { boolean } from '@storybook/addon-knobs';
 import Menu from './Menu';
 
 export default {
@@ -6,7 +7,7 @@ export default {
 };
 
 export const withDefaults = () => (
-  <Menu>
+  <Menu horizontal={boolean('Horizontal', false)}>
     <Menu.Item>
       <a href="/">Menu Item</a>
     </Menu.Item>

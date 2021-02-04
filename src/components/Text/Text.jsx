@@ -29,7 +29,7 @@ const Text = styled.span`
   `}
 
   ${({ size, theme }) => size && css`
-    font-size: ${theme.textSizes[size]};
+    font-size: ${theme.text.sizes[size]};
   `}
 
   ${({ uppercase }) => uppercase && css`

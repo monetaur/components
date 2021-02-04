@@ -5,7 +5,7 @@ import defaultTheme from '../../../themes/default';
 const ProgressBar = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: ${({ theme }) => theme.borderRadius};
-  font-size: ${({ theme }) => theme.textSizes.sm};
+  font-size: ${({ theme }) => theme.text.sizes.sm};
   overflow: hidden;
   padding: ${({ theme }) => `${theme.forms.paddingVertical} ${theme.forms.paddingHorizontal}`};
   position: relative;

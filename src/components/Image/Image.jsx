@@ -6,6 +6,7 @@ import { useIntersection } from '@monetaur/hooks';
 const StyledImage = styled.img`
   max-height: 100%;
   max-width: 100%;
+  vertical-align: middle;
 
   ${({ block }) => block && css`
     display: block;
@@ -14,11 +15,17 @@ const StyledImage = styled.img`
   ${({ raised }) => raised && css`
     box-shadow: ${({ theme }) => theme.shadows.light};
   `}
+
+  ${({ circular }) => circular && css`
+    border-radius: 50%;
+  `}
 `;
 
 function Image({
   alt,
   block,
+  circular,
+  className,
   height,
   lazy,
   onLoad,
@@ -37,6 +44,8 @@ function Image({
     <StyledImage
       alt={alt}
       block={block}
+      className={className}
+      circular={circular}
       height={height}
       onLoad={onLoad}
       raised={raised}
@@ -50,6 +59,8 @@ function Image({
 Image.propTypes = {
   alt: PropTypes.string.isRequired,
   block: PropTypes.bool,
+  className: PropTypes.string,
+  circular: PropTypes.bool,
   height: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
@@ -66,6 +77,8 @@ Image.propTypes = {
 
 Image.defaultProps = {
   block: false,
+  className: undefined,
+  circular: false,
   height: undefined,
   lazy: true,
   onLoad: () => {},

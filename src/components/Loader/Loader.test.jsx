@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
 import Loader from './Loader';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Loader />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  render(<Loader />);
 });

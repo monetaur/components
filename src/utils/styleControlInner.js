@@ -41,7 +41,7 @@ const styleControlInner = ({
   }
 
   ::placeholder {
-    color: ${theme.palette.placeholderColor};
+    color: ${theme.text.colors.placeholder};
   }
 
   ${input && css`
