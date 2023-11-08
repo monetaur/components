@@ -1,11 +1,15 @@
 import React from 'react';
-import { text } from '@storybook/addon-knobs';
 import Checkbox from './Checkbox';
 
 export default {
   title: 'Checkbox',
+  component: Checkbox,
 };
 
-export const withDefaults = () => (
-  <Checkbox>{text('Label', 'I pledge allegiance')}</Checkbox>
+export const withDefaults = (args) => (
+  <Checkbox {...args} />
 );
+
+withDefaults.args = {
+  children: 'I pledge allegiance',
+};

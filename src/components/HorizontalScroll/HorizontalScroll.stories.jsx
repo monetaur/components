@@ -3,6 +3,7 @@ import HorizontalScroll from './HorizontalScroll';
 
 export default {
   title: 'HorizontalScroll',
+  component: HorizontalScroll,
 };
 
 export const withDefaults = () => (

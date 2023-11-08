@@ -1,17 +1,26 @@
 import React from 'react';
-import { boolean, select, text } from '@storybook/addon-knobs';
 import { Sizes } from '../../prop-types/size';
 import Loader from './Loader';
 
 export default {
   title: 'Loader',
+  component: Loader,
 };
 
-export const withDefaults = () => (
-  <Loader
-    expand={boolean('Expand', false)}
-    size={select('Size', { None: null, ...Sizes })}
-  >
-    {text('Content', 'Loading...')}
-  </Loader>
+export const withDefaults = (args) => (
+  <Loader {...args} />
 );
+
+withDefaults.args = {
+  children: 'Loading...',
+  expand: false,
+};
+
+withDefaults.argTypes = {
+  expand: {
+    control: {
+      type: 'select',
+    },
+    options: Object.values(Sizes),
+  },
+};

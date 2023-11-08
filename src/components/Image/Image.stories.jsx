@@ -1,35 +1,22 @@
 import React from 'react';
-import { text, number, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Image from './Image';
 
 export default {
   title: 'Image',
+  component: Image,
 };
 
-export const withDefaults = () => (
-  <Image
-    alt={text('Alt', 'Placeholder')}
-    avatar={boolean('Avatar', false)}
-    block={boolean('Block', false)}
-    circular={boolean('Circular', false)}
-    height={number('Height', undefined)}
-    onLoad={action('Image Loaded')}
-    src="https://placehold.it/200x100"
-    width={number('Width', undefined)}
-  />
+export const withDefaults = (args) => (
+  <Image {...args} />
 );
 
-export const withLazyLoading = () => (
-  <Image
-    alt={text('Alt', 'Placeholder')}
-    avatar={boolean('Avatar', false)}
-    block={boolean('Block', false)}
-    circular={boolean('Circular', false)}
-    height={number('Height', undefined)}
-    lazy
-    onLoad={action('Image Loaded')}
-    src="https://placehold.it/200x100"
-    width={number('Width', undefined)}
-  />
-);
+withDefaults.args = {
+  alt: 'Placeholder',
+  avatar: false,
+  block: false,
+  circular: false,
+  lazy: false,
+  onLoad: action('Image Loaded'),
+  src: 'https://placehold.it/200x100',
+};

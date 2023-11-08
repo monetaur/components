@@ -231,11 +231,11 @@ Dropdown.propTypes = {
   block: PropTypes.bool,
   onChange: PropTypes.func,
   options: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.oneOf([
+    label: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
     ]),
-    value: PropTypes.oneOf([
+    value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
     ]),

@@ -1,13 +1,13 @@
 import React from 'react';
-import { boolean } from '@storybook/addon-knobs';
 import Menu from './Menu';
 
 export default {
   title: 'Menu',
+  component: Menu,
 };
 
-export const withDefaults = () => (
-  <Menu horizontal={boolean('Horizontal', false)}>
+export const withDefaults = (args) => (
+  <Menu {...args}>
     <Menu.Item>
       <a href="/">Menu Item</a>
     </Menu.Item>
@@ -19,3 +19,7 @@ export const withDefaults = () => (
     </Menu.Item>
   </Menu>
 );
+
+withDefaults.args = {
+  horizontal: false,
+};

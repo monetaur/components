@@ -1,35 +1,38 @@
 import React from 'react';
-import { boolean } from '@storybook/addon-knobs';
 import List from './List';
 
 export default {
   title: 'List',
+  component: List,
 };
 
-export const withDefaults = () => (
-  <List
-    block={boolean('Block', false)}
-    bordered={boolean('Bordered', false)}
-  >
+export const withDefaults = (args) => (
+  <List {...args}>
     <List.Item
-      padded={boolean('Padded', false)}
+      padded={args.paddedItems}
     >
       This is a list item
     </List.Item>
     <List.Item
-      padded={boolean('Padded', false)}
+      padded={args.paddedItems}
     >
       This is a list item
     </List.Item>
     <List.Item
-      padded={boolean('Padded', false)}
+      padded={args.paddedItems}
     >
       This is a list item
     </List.Item>
     <List.Item
-      padded={boolean('Padded', false)}
+      padded={args.paddedItems}
     >
       This is a list item
     </List.Item>
   </List>
 );
+
+withDefaults.args = {
+  block: false,
+  bordered: false,
+  paddedItems: false,
+};

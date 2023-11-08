@@ -1,18 +1,18 @@
 import React from 'react';
-import { text, boolean } from '@storybook/addon-knobs';
 import App from './App';
 
 const loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
 export default {
   title: 'App',
+  component: App,
 };
 
-export const withASimpleLayout = () => (
+export const withASimpleLayout = (args) => (
   <App>
     <App.Body>
       <App.Header
-        primary={boolean('Primary Header')}
+        primary={args.primaryHeader}
       />
       <App.Content>
         Site Content
@@ -21,18 +21,22 @@ export const withASimpleLayout = () => (
   </App>
 );
 
-export const withAModerateLayout = () => (
+withASimpleLayout.args = {
+  primaryHeader: false,
+};
+
+export const withAModerateLayout = (args) => (
   <App>
     <App.Sidebar
-      primary={boolean('Primary Sidebar')}
-      raised={boolean('Raised Sidebar')}
+      primary={args.primarySidebar}
+      raised={args.raisedSidebar}
     >
-      {text('Content', 'Sidebar Content')}
+      {args.sidebarContent}
     </App.Sidebar>
     <App.Body>
       <App.Header
         mobileOnly
-        primary={boolean('Primary Header')}
+        primary={args.primaryHeader}
       >
         <App.MenuToggle />
         <div
@@ -52,28 +56,35 @@ export const withAModerateLayout = () => (
   </App>
 );
 
-export const withAComplexLayout = () => (
+withAModerateLayout.args = {
+  primaryHeader: false,
+  primarySidebar: false,
+  raisedSidebar: false,
+  sidebarContent: 'Sidebar Content',
+};
+
+export const withAComplexLayout = (args) => (
   <App>
     <App.Sidebar
-      primary={boolean('Primary Left Sidebar')}
-      raised={boolean('Raised Left Sidebar')}
+      primary={args.primaryLeftSidebar}
+      raised={args.raisedLeftSidebar}
       side="left"
     >
-      {text('Left Sidebar Content', 'Left Sidebar Content')}
+      {args.leftSidebarContent}
     </App.Sidebar>
     <App.Body>
       <App.Layout>
         <App.Sidebar
           side="right"
-          primary={boolean('Primary Right Sidebar')}
-          raised={boolean('Raised Right Sidebar')}
+          primary={args.primaryRightSidebar}
+          raised={args.raisedRightSidebar}
         >
-          {text('Right Sidebar Content', 'Right Sidebar Content')}
+          {args.rightSidebarContent}
         </App.Sidebar>
         <App.Content>
           <App.Header
             mobileOnly
-            primary={boolean('Primary Header')}
+            primary={args.primaryHeader}
           >
             <App.MenuToggle side="left" />
             <div
@@ -95,3 +106,13 @@ export const withAComplexLayout = () => (
     </App.Body>
   </App>
 );
+
+withAComplexLayout.args = {
+  leftSidebarContent: 'Left Sidebar Content',
+  primaryHeader: false,
+  primaryLeftSidebar: false,
+  primaryRightSidebar: false,
+  raisedLeftSidebar: false,
+  raisedRightSidebar: false,
+  rightSidebarContent: 'Right Sidebar Content',
+};

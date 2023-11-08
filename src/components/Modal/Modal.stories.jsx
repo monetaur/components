@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { action } from '@storybook/addon-actions';
-import { select } from '@storybook/addon-knobs';
 import Modal from './Modal';
 import { Sizes } from '../../prop-types/size';
 
 export default {
   title: 'Modal',
+  component: Modal,
 };
 
 function Trigger() {
@@ -28,26 +28,30 @@ function ModalContent() {
   );
 }
 
-export const withATrigger = () => (
-  <Modal
-    onClose={action('Modal Closed')}
-    onOpen={action('Modal Opened')}
-    size={select('Size', { None: null, ...Sizes })}
-    trigger={(
-      <Trigger />
-    )}
-  >
+export const withATrigger = (args) => (
+  <Modal trigger={<Trigger />} {...args}>
     <ModalContent />
   </Modal>
 );
 
-export const withNoTrigger = () => (
-  <Modal
-    isOpen
-    onClose={action('Modal Closed')}
-    onOpen={action('Modal Opened')}
-    size={select('Size', { None: null, ...Sizes })}
-  >
+withATrigger.args = {
+  onClose: action('Modal Closed'),
+  onOpen: action('Modal Opened'),
+};
+
+withATrigger.argTypes = {
+  size: {
+    control: {
+      type: 'select',
+    },
+    options: Object.values(Sizes),
+  },
+};
+
+export const withNoTrigger = (args) => (
+  <Modal {...args}>
     <ModalContent />
   </Modal>
 );
+
+withNoTrigger.args = withATrigger.args;

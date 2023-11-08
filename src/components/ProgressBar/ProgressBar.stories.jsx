@@ -1,15 +1,16 @@
 import React from 'react';
-import { number, text } from '@storybook/addon-knobs';
 import ProgressBar from './ProgressBar';
 
 export default {
   title: 'ProgressBar',
+  component: ProgressBar,
 };
 
-export const withDefaults = () => (
-  <ProgressBar
-    percent={number('Percent', 10)}
-  >
-    {text('Content', '')}
-  </ProgressBar>
+export const withDefaults = (args) => (
+  <ProgressBar {...args} />
 );
+
+withDefaults.args = {
+  children: '',
+  percent: 10,
+};
