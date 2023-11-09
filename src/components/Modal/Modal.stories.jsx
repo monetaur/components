@@ -1,11 +1,18 @@
 import React, { useContext } from 'react';
-import { action } from '@storybook/addon-actions';
 import Modal from './Modal';
 import { Sizes } from '../../prop-types/size';
 
 export default {
   title: 'Modal',
   component: Modal,
+  argTypes: {
+    onClose: {
+      action: 'Modal Closed',
+    },
+    onOpen: {
+      action: 'Modal Opened',
+    },
+  },
 };
 
 function Trigger() {
@@ -34,11 +41,6 @@ export const withATrigger = (args) => (
   </Modal>
 );
 
-withATrigger.args = {
-  onClose: action('Modal Closed'),
-  onOpen: action('Modal Opened'),
-};
-
 withATrigger.argTypes = {
   size: {
     control: {
@@ -54,4 +56,4 @@ export const withNoTrigger = (args) => (
   </Modal>
 );
 
-withNoTrigger.args = withATrigger.args;
+withNoTrigger.argTypes = withATrigger.argTypes;

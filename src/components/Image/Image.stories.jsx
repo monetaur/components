@@ -1,10 +1,14 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import Image from './Image';
 
 export default {
   title: 'Image',
   component: Image,
+  argTypes: {
+    onLoad: {
+      action: 'Image Loaded',
+    },
+  },
 };
 
 export const withDefaults = (args) => (
@@ -17,6 +21,5 @@ withDefaults.args = {
   block: false,
   circular: false,
   lazy: false,
-  onLoad: action('Image Loaded'),
   src: 'https://placehold.it/200x100',
 };

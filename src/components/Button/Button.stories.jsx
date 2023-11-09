@@ -1,11 +1,15 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import Button from './Button';
 import { Sizes } from '../../prop-types/size';
 
 export default {
   title: 'Button',
   component: Button,
+  argTypes: {
+    onClick: {
+      action: 'clicked',
+    },
+  },
 };
 
 export const withDefaults = (args) => (
@@ -16,7 +20,6 @@ withDefaults.args = {
   block: false,
   children: 'Hello Button',
   disabled: false,
-  onClick: action('clicked'),
   primary: false,
   raised: false,
   secondary: false,

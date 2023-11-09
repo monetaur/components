@@ -1,11 +1,15 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import Dropdown from './Dropdown';
 import { Sizes } from '../../prop-types/size';
 
 export default {
   title: 'Dropdown',
   component: Dropdown,
+  argTypes: {
+    onChange: {
+      action: 'Dropdown Value Changed',
+    },
+  },
 };
 
 export const withSimpleOptions = (args) => (
@@ -14,7 +18,6 @@ export const withSimpleOptions = (args) => (
 
 withSimpleOptions.args = {
   block: false,
-  onChange: action('Dropdown Value Changed'),
   options: [
     { label: 'Option 1', value: 1 },
     { label: 'Option 2', value: 2 },
