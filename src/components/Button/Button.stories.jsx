@@ -1,23 +1,36 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { boolean, select, text } from '@storybook/addon-knobs';
 import Button from './Button';
 import { Sizes } from '../../prop-types/size';
 
 export default {
   title: 'Button',
+  component: Button,
+  argTypes: {
+    onClick: {
+      action: 'clicked',
+    },
+  },
 };
 
-export const withDefaults = () => (
-  <Button
-    block={boolean('Block', false)}
-    disabled={boolean('Disabled', false)}
-    onClick={action('clicked')}
-    primary={boolean('Primary', false)}
-    raised={boolean('Raised', false)}
-    secondary={boolean('Secondary', false)}
-    size={select('Size', { None: null, ...Sizes })}
-  >
-    {text('Label', 'Hello Button')}
-  </Button>
+export const withDefaults = (args) => (
+  <Button {...args} />
 );
+
+withDefaults.args = {
+  block: false,
+  children: 'Hello Button',
+  disabled: false,
+  primary: false,
+  raised: false,
+  secondary: false,
+  size: undefined,
+};
+
+withDefaults.argTypes = {
+  size: {
+    control: {
+      type: 'select',
+    },
+    options: Object.values(Sizes),
+  },
+};

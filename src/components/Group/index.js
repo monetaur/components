@@ -1,1 +1,3 @@
-export { default } from './Group';
+import Group from './Group';
+
+export default Group;

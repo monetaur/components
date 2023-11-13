@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
+import { it } from 'vitest';
 import Box from './Box';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Box />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  render(<Box />);
 });

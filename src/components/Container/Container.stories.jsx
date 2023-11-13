@@ -1,11 +1,16 @@
 import React from 'react';
-import { boolean } from '@storybook/addon-knobs';
 import Container from './Container';
 
 export default {
   title: 'Container',
+  component: Container,
 };
 
-export const withDefaults = () => (
-  <Container block={boolean('Block', false)}>Hello World</Container>
+export const withDefaults = (args) => (
+  <Container {...args} />
 );
+
+withDefaults.args = {
+  block: false,
+  children: 'Hello World',
+};

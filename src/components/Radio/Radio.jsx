@@ -16,7 +16,6 @@ function generateId(chars = 5) {
   return text;
 }
 
-
 const Input = styled.input`
   display: none;
 
@@ -27,7 +26,7 @@ const Input = styled.input`
   `}
 
   + label {
-    color: ${({ theme }) => theme.palette.mutedText};
+    color: ${({ theme }) => theme.text.colors.muted};
     line-height: ${({ theme }) => theme.lineHeight};
     margin-right: 0.5em;
   }

@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
+import { it } from 'vitest';
 import Autocomplete from './Autocomplete';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Autocomplete />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  render(<Autocomplete />);
 });

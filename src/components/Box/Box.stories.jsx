@@ -1,21 +1,30 @@
 import React from 'react';
-import { boolean, select, text } from '@storybook/addon-knobs';
 import Box from './Box';
 import { Colors } from '../../prop-types/color';
 
 export default {
   title: 'Box',
+  component: Box,
 };
 
-export const withDefaults = () => (
-  <Box
-    block={boolean('Block', true)}
-    bordered={boolean('Bordered', true)}
-    color={select('Color', { None: null, ...Colors })}
-    filled={boolean('Filled', false)}
-    padded={boolean('Padded', true)}
-    raised={boolean('Raised', false)}
-  >
-    {text('Content', 'Box Content')}
-  </Box>
+export const withDefaults = (args) => (
+  <Box {...args} />
 );
+
+withDefaults.args = {
+  block: true,
+  bordered: true,
+  children: 'Box Content',
+  filled: false,
+  padded: true,
+  raised: false,
+};
+
+withDefaults.argTypes = {
+  color: {
+    control: {
+      type: 'select',
+    },
+    options: Object.values(Colors),
+  },
+};

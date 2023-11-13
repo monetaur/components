@@ -1,1 +1,3 @@
-export { default } from './HorizontalScroll';
+import HorizontalScroll from './HorizontalScroll';
+
+export default HorizontalScroll;

@@ -17,7 +17,6 @@ function generateId(chars = 5) {
   return text;
 }
 
-
 const Input = styled.input`
   display: none;
 

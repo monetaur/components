@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
+import { it } from 'vitest';
 import Radio from './Radio';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Radio name="test" />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  render(<Radio name="test" />);
 });
