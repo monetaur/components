@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { it } from 'vitest';
 import Form from './Form';
 
 it('renders without crashing', () => {
